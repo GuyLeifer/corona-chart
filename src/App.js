@@ -2,7 +2,14 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
-import { LineChart, Line, CartesianGrid, XAxis, YAxis, Brush, Tooltip , Legend, AreaChart, Area} from 'recharts';
+import { 
+  CartesianGrid, XAxis, YAxis, Brush, Tooltip , Legend, ResponsiveContainer,
+  LineChart, Line, 
+  AreaChart, Area, 
+  BarChart, Bar, 
+  PieChart, Pie, Sector, Cell
+} 
+from 'recharts';
 import './App.css';
 
 const animatedComponents = makeAnimated();
@@ -75,7 +82,7 @@ console.log("options:" , options)
 
   return (
     <div className="App">
-      <h1>Corona Chart:</h1>
+      <h1>COVID-19 DASHBOARD</h1>
       <h2>See What's Up Around The World</h2> 
       <Select 
       className="select"
@@ -132,6 +139,26 @@ console.log("options:" , options)
           ))
         )}
       </AreaChart>
+
+      <BarChart
+        data={data}
+        className="chart"
+        width={1460} 
+        height={700}
+			>
+				<CartesianGrid strokeDasharray="3 3" />
+				<XAxis dataKey="date" />
+        <YAxis />
+				<Tooltip />
+				<Legend />
+        <Brush dataKey="date" height={30} />
+        {selected && (
+          selected.map((country)=> (
+            <Bar dataKey={country.value} fill={country.color} />
+          ))
+        )}
+			</BarChart>
+
     </div>
   );
 }
