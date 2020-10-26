@@ -11,6 +11,7 @@ import {
 } 
 from 'recharts';
 import './App.css';
+import Footer from './Footer/Footer';
 
 const animatedComponents = makeAnimated();
 
@@ -82,8 +83,12 @@ console.log("options:" , options)
 
   return (
     <div className="App">
-      <h1>COVID-19 DASHBOARD</h1>
-      <h2>See What's Up Around The World</h2> 
+      <header>
+        <h1>COVID-19 DASHBOARD</h1>
+        <h2>See What's Up Around The World</h2>
+        <img src="https://image.flaticon.com/icons/png/512/2853/2853896.png" /> 
+        <h3>Which Countries Do You Want To Know About? Compare Between Them!</h3>
+      </header>
       <Select 
       className="select"
       options={options}
@@ -140,6 +145,7 @@ console.log("options:" , options)
         )}
       </AreaChart>
 
+      
       <BarChart
         data={data}
         className="chart"
@@ -158,7 +164,8 @@ console.log("options:" , options)
           ))
         )}
 			</BarChart>
-
+      <Footer />
+      
     </div>
   );
 }

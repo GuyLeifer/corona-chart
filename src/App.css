@@ -1,9 +1,27 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Gloria+Hallelujah&family=Gochi+Hand&family=Permanent+Marker&display=swap');
+
+html {
   text-align: center;
+  background-color: black;
+  color: aliceblue;
+  font-family: 'Permanent Marker', cursive;
+}
+.App {
+  border: 20px solid red;
+}
+header {
+  font-size: 200%;
+  font-family: 'Anton', sans-serif;
+  color: red;
+}
+img {
+  background-color: aliceblue;
+  border-radius: 50%;
 }
 .select {
   width: 60%;
   margin: 30px auto;
+  color: black;
 }
 .chart {
   width: 80%;
