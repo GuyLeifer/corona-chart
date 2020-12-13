@@ -9,7 +9,7 @@ the repository use recharts package and uses React.
 1. clone this repo to your device. 
 2. open the folder in your editor. 
 3. in the main folder run the command "npm i".
-4. in the main folder run the command "docker-compose build".
+4. in the main folder run the command "npm start".
 
 ## Home Page
     the home page contains a dashboard with three charts 
